@@ -93,15 +93,18 @@ export const DescriptionWrapper = styled.div({
 export const ImageContainer = styled.div({
   flexBasis: "29%",
   cursor: "pointer",
-  maxWidth: "306px",
-  maxHeight: "164px",
+
   img: {
     width: "100%",
-    height: "100%",
-    objectFit: "cover",
   },
   "@media (min-width: 850px)": {
     flexBasis: "31%",
+    maxWidth: "306px",
+    maxHeight: "164px",
+    img: {
+      height: "100%",
+      objectFit: "cover",
+    },
   },
 });
 
