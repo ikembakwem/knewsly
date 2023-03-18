@@ -11,6 +11,8 @@ export const ArticleCard = ({ data }) => {
     content,
     urlToImage,
     description,
+    url,
+    source,
   } = data;
   return (
     <Content>
@@ -19,6 +21,8 @@ export const ArticleCard = ({ data }) => {
         title={title}
         author={author}
         publishedAt={publishedAt}
+        url={url}
+        source={source}
       />
       <ArticleDescription
         content={content}

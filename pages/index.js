@@ -27,7 +27,7 @@ export default function Home({ result }) {
       </ArticlesContainer>
     );
   }
-
+  console.log(data);
   return (
     <>
       <Head>
