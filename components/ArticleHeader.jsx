@@ -21,7 +21,7 @@ export const ArticleHeader = ({
       <CategoryTitle>{source.name}</CategoryTitle>
       <ArticleTitle>
         <Link href={url}>
-          <a>{title}</a>
+          <a target="_blank">{title}</a>
         </Link>
       </ArticleTitle>
       <Footer>
