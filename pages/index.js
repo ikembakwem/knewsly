@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import { LoadingSpinner } from "../components/loaders";
 
 const API_KEY = process.env.API_KEY;
-const url = `https://newsapi.org/v2/top-headlines?country=us&category=business`;
+const url = `https://newsapi.org/v2/top-headlines?country=us&category=sports`;
 
 export default function Home({ result }) {
   const [data, setData] = useState([]);
@@ -41,7 +41,7 @@ export default function Home({ result }) {
         <SectionTitle>Top Business News</SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
-        {data.map((data) => (
+        {data.slice(0, 5).map((data) => (
           <ArticleCard
             key={Math.floor(Math.random() * 99999)}
             data={data}

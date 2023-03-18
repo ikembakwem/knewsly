@@ -113,3 +113,24 @@ export const SectionTitle = styled.h3`
   letter-spacing: -0.03px;
   margin: 0 10px;
 `;
+
+export const NavigationWrapper = styled.header({
+  display: "none",
+  "@media (min-width: 1100px)": {
+    top: 0,
+    paddingLeft: "30px",
+    paddingTop: "30px",
+    paddingRight: "20px",
+    letterSpacing: "-.02em",
+    height: "100%",
+    position: "fixed",
+    zIndex: 49,
+    right: 0,
+    left: 0,
+    width: "210px",
+    display: "block",
+  },
+  "@media (min-width: 1440px)": {
+    width: "250px",
+  },
+});

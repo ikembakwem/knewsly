@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import DesktopNav from "../components/DesktopNav";
+import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <>
+      <DesktopNav />
+      <Component {...pageProps} />
+    </>
+  );
 }
 
-export default MyApp
+export default MyApp;
