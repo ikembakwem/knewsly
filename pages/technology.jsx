@@ -21,7 +21,7 @@ export default function TechnologyNews({ result }) {
   if (loading) {
     return (
       <ArticlesContainer>
-        <SectionTitle>Latest Tech News</SectionTitle>
+        <SectionTitle>Tech News</SectionTitle>
         <LoadingSpinner />
       </ArticlesContainer>
     );
@@ -37,7 +37,7 @@ export default function TechnologyNews({ result }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ArticlesContainer>
-        <SectionTitle>Latest Tech News</SectionTitle>
+        <SectionTitle>Tech News</SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
         <FeaturedArticleCard data={data[0]} />

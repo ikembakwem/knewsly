@@ -21,7 +21,7 @@ export default function SportsNewa({ result }) {
   if (loading) {
     return (
       <ArticlesContainer>
-        <SectionTitle>Latest Sports News</SectionTitle>
+        <SectionTitle>Sports News</SectionTitle>
         <LoadingSpinner />
       </ArticlesContainer>
     );
@@ -37,7 +37,7 @@ export default function SportsNewa({ result }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ArticlesContainer>
-        <SectionTitle>Latest Sports News</SectionTitle>
+        <SectionTitle>Sports News</SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
         <FeaturedArticleCard data={data[0]} />

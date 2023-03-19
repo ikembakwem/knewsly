@@ -28,7 +28,13 @@ export const ArticleCard = ({ data }) => {
         content={content}
         description={description}
       />
-      <ArticleImage url={urlToImage} />
+      <ArticleImage
+        url={
+          urlToImage
+            ? urlToImage
+            : `/images/newsImgPlaceholder.jpg`
+        }
+      />
     </Content>
   );
 };

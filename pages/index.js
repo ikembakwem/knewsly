@@ -1,10 +1,31 @@
 import Head from "next/head";
-import BusinessNews from "./business";
+import { useEffect, useState } from "react";
+import { ArticlesContainer } from "../components/styles";
+import { LoadingSpinner } from "../components/loaders";
+import fetcher from "../lib/fetcher";
+import { SectionTitle } from "../components/styles";
+import { ArticleCard } from "../components/ArticleCard";
+import FeaturedArticleCard from "../components/FeaturedArticleCard";
 
-const API_KEY = process.env.API_KEY;
-const url = `https://newsapi.org/v2/top-headlines?country=us&category=sports`;
+export default function Home({ newsArray }) {
+  const [loading, setLoading] = useState(true);
+  const [news, setNews] = useState([]);
 
-export default function Home({ result }) {
+  useEffect(() => {
+    setNews(newsArray);
+    setLoading(false);
+  }, [newsArray]);
+
+  if (loading) {
+    return (
+      <ArticlesContainer>
+        <SectionTitle>Sports News</SectionTitle>
+        <LoadingSpinner />
+      </ArticlesContainer>
+    );
+  }
+
+  const [sports, business, technology] = news;
   return (
     <>
       <Head>
@@ -15,22 +36,56 @@ export default function Home({ result }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <BusinessNews articlesLength="7" />
+      <ArticlesContainer>
+        <SectionTitle>Sports</SectionTitle>
+      </ArticlesContainer>
+      <ArticlesContainer>
+        <FeaturedArticleCard data={sports[0]} />
+        {sports.slice(1, 7).map((data) => (
+          <ArticleCard
+            key={Math.floor(Math.random() * 99999)}
+            data={data}
+          />
+        ))}
+      </ArticlesContainer>
+      <ArticlesContainer>
+        <SectionTitle>Business</SectionTitle>
+      </ArticlesContainer>
+      <ArticlesContainer>
+        <FeaturedArticleCard data={business[0]} />
+        {business.slice(1, 7).map((data) => (
+          <ArticleCard
+            key={Math.floor(Math.random() * 99999)}
+            data={data}
+          />
+        ))}
+      </ArticlesContainer>
+      <ArticlesContainer>
+        <SectionTitle>Technology</SectionTitle>
+      </ArticlesContainer>
+      <ArticlesContainer>
+        <FeaturedArticleCard data={technology[0]} />
+        {technology.slice(1, 7).map((data) => (
+          <ArticleCard
+            key={Math.floor(Math.random() * 99999)}
+            data={data}
+          />
+        ))}
+      </ArticlesContainer>
     </>
   );
 }
 
 export async function getServerSideProps() {
-  const data = await fetch(url, {
-    headers: new Headers({
-      "X-Api-Key": API_KEY,
-      "Content-Type": "application/json",
-    }),
-  });
+  const sports = await fetcher("sports");
+  const business = await fetcher("business");
+  const technology = await fetcher("technology");
 
-  const res = await data.json();
-  const { articles: result } = res;
+  const newsArray = [sports, business, technology];
+
   return {
-    props: { result },
+    props: {
+      newsArray,
+    },
   };
 }

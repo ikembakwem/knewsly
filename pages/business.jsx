@@ -21,7 +21,7 @@ export default function BusinessNews({ result }) {
   if (loading) {
     return (
       <ArticlesContainer>
-        <SectionTitle>Top Business News</SectionTitle>
+        <SectionTitle>Business News</SectionTitle>
         <LoadingSpinner />
       </ArticlesContainer>
     );
@@ -37,7 +37,7 @@ export default function BusinessNews({ result }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ArticlesContainer>
-        <SectionTitle>Latest Business News</SectionTitle>
+        <SectionTitle>Business News</SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
         <FeaturedArticleCard data={data[0]} />

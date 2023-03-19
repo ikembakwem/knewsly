@@ -25,7 +25,14 @@ const FeaturedArticleCard = ({ data }) => {
   return (
     <Wrapper>
       <FeaturedImageContainer>
-        <img src={urlToImage} alt="Cover image" />
+        <img
+          src={
+            urlToImage
+              ? urlToImage
+              : `/images/newsImgPlaceholder.jpg`
+          }
+          alt="Cover image"
+        />
       </FeaturedImageContainer>
       <HeaderWrapper>
         <CategoryTitle feat>{source.name}</CategoryTitle>
