@@ -24,16 +24,9 @@ export const ArticleCard = ({ data }) => {
         url={url}
         source={source}
       />
-      <ArticleDescription
-        content={content}
-        description={description}
-      />
+      <ArticleDescription content={content} description={description} />
       <ArticleImage
-        url={
-          urlToImage
-            ? urlToImage
-            : `/images/newsImgPlaceholder.jpg`
-        }
+        url={urlToImage ? urlToImage : `/images/newsImgPlaceholder.jpg`}
       />
     </Content>
   );

@@ -1,17 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
-import styled from "@emotion/styled";
 import React from "react";
 import {
-  HeaderWrapper,
+  HeaderContainer,
   CategoryTitle,
   FeaturedArticleTitle,
-  FeatureDescriptionWrapper,
-  Footer,
+  FeaturedDescriptionContainer,
+  ArticleHeadFooter,
   Author,
+  Content,
+  FeaturedImageContainer,
 } from "./styles";
 import { DateTime } from "./DateTime";
+import Link from "next/link";
 
-const FeaturedArticleCard = ({ data }) => {
+export const FeaturedArticleCard = ({ data }) => {
   const {
     author,
     title,
@@ -23,67 +25,32 @@ const FeaturedArticleCard = ({ data }) => {
     source,
   } = data;
   return (
-    <Wrapper>
+    <Content>
       <FeaturedImageContainer>
         <img
-          src={
-            urlToImage
-              ? urlToImage
-              : `/images/newsImgPlaceholder.jpg`
-          }
+          src={urlToImage ? urlToImage : `/images/newsImgPlaceholder.jpg`}
           alt="Cover image"
         />
       </FeaturedImageContainer>
-      <HeaderWrapper>
+      <HeaderContainer>
         <CategoryTitle feat>{source.name}</CategoryTitle>
-        <FeaturedArticleTitle>{title}</FeaturedArticleTitle>
-        <FeatureDescriptionWrapper>
+        <FeaturedArticleTitle>
+          <Link href={url}>
+            <a target="_blank">{title}</a>
+          </Link>
+        </FeaturedArticleTitle>
+        <FeaturedDescriptionContainer>
           {content
             ? content.length > 195
               ? `${content.substring(0, 128)}...`
               : content
             : description}
-        </FeatureDescriptionWrapper>
-        <Footer>
+        </FeaturedDescriptionContainer>
+        <ArticleHeadFooter>
           <Author>{author}</Author>
           <DateTime date={publishedAt} />
-        </Footer>
-      </HeaderWrapper>
-    </Wrapper>
+        </ArticleHeadFooter>
+      </HeaderContainer>
+    </Content>
   );
 };
-
-export default FeaturedArticleCard;
-
-const Wrapper = styled.div({
-  position: "relative",
-  marginTop: "1em",
-  marginBottom: "1.425em",
-  borderTop: "2px solid #f1f1f1",
-  display: "flex",
-  flexWrap: "wrap",
-  cursor: "pointer",
-  justifyContent: "space-between",
-  transition: "all .2s ease .1s",
-  ":hover": {
-    opacity: 0.6,
-  },
-});
-
-const FeaturedImageContainer = styled.div({
-  marginBottom: "15px",
-  img: {
-    width: "100%",
-  },
-  "@media (min-width: 1100px)": {
-    order: 2,
-    display: "block",
-    flexBasis: "67%",
-    maxWidth: "708px",
-    maxHeight: "350px",
-    img: {
-      height: "100%",
-      objectFit: "cover",
-    },
-  },
-});

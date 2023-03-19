@@ -14,6 +14,5 @@ export const LoadingSpinner = styled.div`
   border-radius: 50%;
   border-top-color: #0052ff;
   animation: ${spinner} 0.6s linear infinite;
-  ${({ lg }) =>
-    lg && `width: 64px; height: 64px; border-width: 4px;`}
+  ${({ lg }) => lg && `width: 64px; height: 64px; border-width: 4px;`}
 `;

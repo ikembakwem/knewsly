@@ -1,5 +1,6 @@
 import styled from "@emotion/styled";
 
+// CONTAINERS
 export const ArticlesContainer = styled.div({
   width: "90%",
   marginLeft: "5%",
@@ -22,22 +23,106 @@ export const Content = styled.article({
   borderTop: "2px solid #f1f1f1",
   display: "flex",
   flexWrap: "wrap",
+  cursor: "pointer",
   justifyContent: "space-between",
-  transition: "all 0.2s ease",
+  transition: "all .2s ease .1s",
   opacity: 1,
   paddingTop: "1.425em",
   ":hover": {
-    opacity: 0.8,
+    opacity: 0.6,
   },
 });
 
-export const HeaderWrapper = styled.header({
+export const HeaderContainer = styled.header({
   flexBasis: "69%",
   "@media (min-width: 850px)": {
     flexBasis: "28%",
     minWidth: 0,
   },
 });
+
+export const ArticleHeadFooter = styled.div({
+  fontSize: "0.8125rem",
+  lineHeight: 1.54,
+  color: "#777",
+});
+
+export const DescriptionContainer = styled.div({
+  display: "none",
+  cursor: "pointer",
+  "@media (min-width: 850px)": {
+    flexBasis: "32%",
+    fontSize: "0.875rem",
+    display: "block",
+    lineHeight: 1.43,
+    color: "#777",
+  },
+});
+
+export const FeaturedDescriptionContainer = styled(DescriptionContainer)({
+  "@media (min-width: 850px)": {
+    margin: "15px 0 30px",
+  },
+});
+
+export const NavigationContainer = styled.header({
+  display: "none",
+  "@media (min-width: 1100px)": {
+    top: 0,
+    paddingLeft: "30px",
+    paddingTop: "30px",
+    paddingRight: "20px",
+    letterSpacing: "-.02em",
+    height: "100%",
+    position: "fixed",
+    zIndex: 49,
+    right: 0,
+    left: 0,
+    width: "210px",
+    display: "block",
+  },
+  "@media (min-width: 1440px)": {
+    width: "250px",
+  },
+});
+
+export const ImageContainer = styled.div({
+  flexBasis: "29%",
+  cursor: "pointer",
+
+  img: {
+    width: "100%",
+  },
+  "@media (min-width: 850px)": {
+    display: "block",
+    flexBasis: "31%",
+    maxWidth: "306px",
+    maxHeight: "164px",
+    img: {
+      height: "100%",
+      objectFit: "cover",
+    },
+  },
+});
+
+export const FeaturedImageContainer = styled(ImageContainer)({
+  marginBottom: "15px",
+  "@media (min-width: 850px)": {
+    order: 2,
+    flexBasis: "67%",
+    maxWidth: "708px",
+    maxHeight: "350px",
+  },
+});
+
+// TYPOGRAPHY
+export const SectionTitle = styled.h2`
+  font-size: 1.125rem;
+  letter-spacing: -0.6px;
+  margin: 15px 0;
+  color: #0052ff;
+  cursor: pointer;
+`;
 
 export const CategoryTitle = styled.div`
   display: flex;
@@ -47,7 +132,7 @@ export const CategoryTitle = styled.div`
   color: #00d301;
   ${({ feat }) =>
     feat &&
-    `padding-top: 3px; font-size: 1.125rem; font-weight: 600;`}
+    `padding-top: 3px; font-size: 1.125rem; font-weight: bold; text-transform: uppercase;`}
 `;
 
 export const ArticleTitle = styled.h2({
@@ -70,12 +155,7 @@ export const FeaturedArticleTitle = styled(ArticleTitle)({
   },
 });
 
-export const Footer = styled.div({
-  fontSize: "0.8125rem",
-  lineHeight: 1.54,
-  color: "#777",
-});
-
+// UTILS
 export const Author = styled.span({
   fontWeight: 700,
   color: "#333",
@@ -85,69 +165,4 @@ export const Author = styled.span({
 export const Time = styled.div({
   display: "flex",
   gap: "3px",
-});
-
-export const DescriptionWrapper = styled.div({
-  display: "none",
-  cursor: "pointer",
-  "@media (min-width: 850px)": {
-    flexBasis: "32%",
-    fontSize: "0.875rem",
-    display: "block",
-    lineHeight: 1.43,
-    color: "#777",
-  },
-});
-
-export const FeatureDescriptionWrapper = styled(
-  DescriptionWrapper
-)({
-  "@media (min-width: 850px)": {
-    margin: "15px 0 30px",
-  },
-});
-
-export const ImageContainer = styled.div({
-  flexBasis: "29%",
-  cursor: "pointer",
-
-  img: {
-    width: "100%",
-  },
-  "@media (min-width: 850px)": {
-    flexBasis: "31%",
-    maxWidth: "306px",
-    maxHeight: "164px",
-    img: {
-      height: "100%",
-      objectFit: "cover",
-    },
-  },
-});
-
-export const SectionTitle = styled.h2`
-  font-size: 1.125rem;
-  letter-spacing: -0.6px;
-  margin: 15px 0;
-`;
-
-export const NavigationWrapper = styled.header({
-  display: "none",
-  "@media (min-width: 1100px)": {
-    top: 0,
-    paddingLeft: "30px",
-    paddingTop: "30px",
-    paddingRight: "20px",
-    letterSpacing: "-.02em",
-    height: "100%",
-    position: "fixed",
-    zIndex: 49,
-    right: 0,
-    left: 0,
-    width: "210px",
-    display: "block",
-  },
-  "@media (min-width: 1440px)": {
-    width: "250px",
-  },
 });

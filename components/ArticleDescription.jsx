@@ -1,16 +1,13 @@
-import { DescriptionWrapper } from "./styles";
+import { DescriptionContainer } from "./styles";
 
-export const ArticleDescription = ({
-  content,
-  description,
-}) => {
+export const ArticleDescription = ({ content, description }) => {
   return (
-    <DescriptionWrapper>
+    <DescriptionContainer>
       {content
         ? content.length > 195
           ? `${content.substring(0, 195)}...`
           : content
         : description}
-    </DescriptionWrapper>
+    </DescriptionContainer>
   );
 };

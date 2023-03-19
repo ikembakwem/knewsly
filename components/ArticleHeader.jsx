@@ -1,8 +1,8 @@
 import {
-  HeaderWrapper,
+  HeaderContainer,
   CategoryTitle,
   ArticleTitle,
-  Footer,
+  ArticleHeadFooter,
   Author,
 } from "./styles";
 import { DateTime } from "./DateTime";
@@ -17,17 +17,17 @@ export const ArticleHeader = ({
   source,
 }) => {
   return (
-    <HeaderWrapper>
+    <HeaderContainer>
       <CategoryTitle>{source.name}</CategoryTitle>
       <ArticleTitle>
         <Link href={url}>
           <a target="_blank">{title}</a>
         </Link>
       </ArticleTitle>
-      <Footer>
+      <ArticleHeadFooter>
         <Author>{author}</Author>
         <DateTime date={publishedAt} />
-      </Footer>
-    </HeaderWrapper>
+      </ArticleHeadFooter>
+    </HeaderContainer>
   );
 };
