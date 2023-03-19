@@ -6,6 +6,7 @@ import fetcher from "../lib/fetcher";
 import { SectionTitle } from "../components/styles";
 import { ArticleCard } from "../components/ArticleCard";
 import FeaturedArticleCard from "../components/FeaturedArticleCard";
+import Link from "next/link";
 
 export default function Home({ newsArray }) {
   const [loading, setLoading] = useState(true);
@@ -37,7 +38,11 @@ export default function Home({ newsArray }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <ArticlesContainer>
-        <SectionTitle>Sports</SectionTitle>
+        <SectionTitle>
+          <Link href="/sports">
+            <a>Sports</a>
+          </Link>
+        </SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
         <FeaturedArticleCard data={sports[0]} />
@@ -49,7 +54,11 @@ export default function Home({ newsArray }) {
         ))}
       </ArticlesContainer>
       <ArticlesContainer>
-        <SectionTitle>Business</SectionTitle>
+        <SectionTitle>
+          <Link href="/sports">
+            <a>Business</a>
+          </Link>
+        </SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
         <FeaturedArticleCard data={business[0]} />
@@ -61,7 +70,11 @@ export default function Home({ newsArray }) {
         ))}
       </ArticlesContainer>
       <ArticlesContainer>
-        <SectionTitle>Technology</SectionTitle>
+        <SectionTitle>
+          <Link href="/sports">
+            <a>Technology</a>
+          </Link>
+        </SectionTitle>
       </ArticlesContainer>
       <ArticlesContainer>
         <FeaturedArticleCard data={technology[0]} />
