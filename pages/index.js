@@ -1,32 +1,10 @@
 import Head from "next/head";
-import {
-  ArticlesContainer,
-  SectionTitle,
-} from "../components/styles";
-import { ArticleCard } from "../components/ArticleCard";
-import { useEffect, useState } from "react";
-import { LoadingSpinner } from "../components/loaders";
+import BusinessNews from "./business";
 
 const API_KEY = process.env.API_KEY;
 const url = `https://newsapi.org/v2/top-headlines?country=us&category=sports`;
 
 export default function Home({ result }) {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    setData(result);
-    setLoading(false);
-  }, [result]);
-
-  if (loading) {
-    return (
-      <ArticlesContainer>
-        <SectionTitle>Top Business News</SectionTitle>
-        <LoadingSpinner />
-      </ArticlesContainer>
-    );
-  }
   return (
     <>
       <Head>
@@ -37,17 +15,7 @@ export default function Home({ result }) {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <ArticlesContainer>
-        <SectionTitle>Top Business News</SectionTitle>
-      </ArticlesContainer>
-      <ArticlesContainer>
-        {data.slice(0, 5).map((data) => (
-          <ArticleCard
-            key={Math.floor(Math.random() * 99999)}
-            data={data}
-          />
-        ))}
-      </ArticlesContainer>
+      <BusinessNews articlesLength="7" />
     </>
   );
 }

@@ -39,13 +39,16 @@ export const HeaderWrapper = styled.header({
   },
 });
 
-export const CategoryTitle = styled.div({
-  display: "flex",
-  fontSize: "14px",
-  lineHeight: 1,
-  marginBottom: "7px",
-  color: "#00d301",
-});
+export const CategoryTitle = styled.div`
+  display: flex;
+  font-size: 14px;
+  line-height: 1;
+  margin-bottom: 7px;
+  color: #00d301;
+  ${({ feat }) =>
+    feat &&
+    `padding-top: 3px; font-size: 1.125rem; font-weight: 600;`}
+`;
 
 export const ArticleTitle = styled.h2({
   fontSize: "1.375rem",
@@ -58,6 +61,12 @@ export const ArticleTitle = styled.h2({
   color: "#000",
   "@media (min-width: 850px)": {
     marginBottom: "10px",
+  },
+});
+
+export const FeaturedArticleTitle = styled(ArticleTitle)({
+  "@media (min-width: 1100px)": {
+    fontSize: "1.625rem",
   },
 });
 
@@ -90,6 +99,14 @@ export const DescriptionWrapper = styled.div({
   },
 });
 
+export const FeatureDescriptionWrapper = styled(
+  DescriptionWrapper
+)({
+  "@media (min-width: 850px)": {
+    margin: "15px 0 30px",
+  },
+});
+
 export const ImageContainer = styled.div({
   flexBasis: "29%",
   cursor: "pointer",
@@ -108,10 +125,10 @@ export const ImageContainer = styled.div({
   },
 });
 
-export const SectionTitle = styled.h3`
-  font-size: 24px;
-  letter-spacing: -0.03px;
-  margin: 0 10px;
+export const SectionTitle = styled.h2`
+  font-size: 1.125rem;
+  letter-spacing: -0.6px;
+  margin: 15px 0;
 `;
 
 export const NavigationWrapper = styled.header({
