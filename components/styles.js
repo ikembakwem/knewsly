@@ -166,3 +166,62 @@ export const Time = styled.div({
   display: "flex",
   gap: "3px",
 });
+
+// V.2
+export const Button = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  padding: 1rem 3rem;
+  color: white;
+  background-color: #ef4444;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 255, 0.5);
+  }
+`;
+
+// V.1
+export const Button2 = styled.button({
+  display: "inline-flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "0.375rem",
+  cursor: "pointer",
+  fontWeight: 500,
+  fontSize: "1.125rem",
+  lineHeight: "1.75rem",
+  padding: "1rem 3rem",
+  color: "white",
+  backgroundColor: "#ef4444",
+  transition: "all .2s ease",
+  ":focus": {
+    outline: "none",
+    boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
+  },
+});
+
+export const MenuItem = styled.p({
+  padding: ".2em 0",
+  fontSize: "1.125rem",
+  lineHeight: 1.1,
+  color: "#777",
+  cursor: "pointer",
+
+  "@media (min-width: 575px)": {
+    marginBottom: "5px",
+    width: "auto",
+  },
+});
+
+export const NavMenu = styled.div({
+  display: "flex",
+  flexDirection: "column",
+  marginTop: "20px",
+});
