@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import styled from "@emotion/styled";
+import Image from "next/image";
 import Link from "next/link";
 
 const twitterLink = "https://twitter.com/ikembakwem";
@@ -18,15 +18,22 @@ export const Footer = () => {
       <SocialLinks>
         <Link href={twitterLink}>
           <a target="_blank">
-            <img src="/images/twitter-icon.svg" alt="icon link to twitter" />
+            <Image
+              src="/images/twitter-icon.svg"
+              height={32}
+              width={32}
+              alt="icon link to twitter"
+            ></Image>
           </a>
         </Link>
         <Link href={githubLink}>
           <a target="_blank">
-            <img
+            <Image
               src="/images/github-mark-white.svg"
+              height={32}
+              width={32}
               alt="icon link to github"
-            />
+            ></Image>
           </a>
         </Link>
       </SocialLinks>
@@ -74,7 +81,6 @@ const SocialLinks = styled.div({
   padding: "8px",
   img: {
     backgrounColor: "white",
-    width: "32px",
   },
   "@media (min-width: 640px)": {
     order: 3,
