@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const twitterLink = "https://twitter.com/ikembakwem";
-const githubLink = "https://github.com/ikembakwem";
+const githubLink = "https://github.com/ikembakwem/knewsly";
 const newsAPI = "https://newsapi.org";
 
 export const Footer = () => {
