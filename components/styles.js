@@ -73,7 +73,6 @@ export const NavigationContainer = styled.header({
     paddingTop: "30px",
     paddingRight: "20px",
     letterSpacing: "-.02em",
-    height: "100%",
     position: "fixed",
     zIndex: 49,
     right: 0,

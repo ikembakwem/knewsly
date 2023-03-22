@@ -4,6 +4,7 @@ import { LoadingSpinner } from "../components/loaders";
 import { useState, useEffect } from "react";
 import fetcher from "../lib/fetcher";
 import { FeaturedArticleCard } from "../components/FeaturedArticleCard";
+import { Footer } from "../components/Footer";
 
 export default function Hone({ result }) {
   const [data, setData] = useState([]);
@@ -16,13 +17,14 @@ export default function Hone({ result }) {
 
   if (loading) {
     return (
-      <ArticlesContainer>
-        <SectionTitle>Sports News</SectionTitle>
-        <LoadingSpinner />
-      </ArticlesContainer>
+      <>
+        <ArticlesContainer>
+          <SectionTitle>Sports News</SectionTitle>
+          <LoadingSpinner />
+        </ArticlesContainer>
+      </>
     );
   }
-  console.log("Data received from API", data);
   return (
     <>
       <ArticlesContainer>
@@ -34,6 +36,7 @@ export default function Hone({ result }) {
           <ArticleCard key={Math.floor(Math.random() * 99999)} data={data} />
         ))}
       </ArticlesContainer>
+      <Footer />
     </>
   );
 }

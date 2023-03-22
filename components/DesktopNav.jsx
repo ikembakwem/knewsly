@@ -10,7 +10,7 @@ const DesktopNav = () => {
           <a>knewsly</a>
         </Link>
       </Logo>
-      <Desc>...get your sports news</Desc>
+      <Desc>...we knew the news</Desc>
     </NavigationContainer>
   );
 };
@@ -28,4 +28,6 @@ const Logo = styled.div({
 
 const Desc = styled.div({
   fontSize: "13px",
+  fontWeight: "bold",
+  letterSpacing: ".04px",
 });
