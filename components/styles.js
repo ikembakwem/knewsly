@@ -28,8 +28,10 @@ export const Content = styled.article({
   transition: "all .2s ease .1s",
   opacity: 1,
   paddingTop: "1.425em",
-  ":hover": {
-    opacity: 0.6,
+  "@media (min-width: 1100px)": {
+    ":hover": {
+      opacity: 0.6,
+    },
   },
 });
 
