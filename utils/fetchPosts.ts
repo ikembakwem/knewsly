@@ -5,7 +5,7 @@ export const fetchPosts = async (category: string) => {
   const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`;
 
   const response = await fetch(url, {
-    next: { revalidate: 300 }
+    next: { revalidate: 60 * 60 }
   });
 
   const data = await response.json();

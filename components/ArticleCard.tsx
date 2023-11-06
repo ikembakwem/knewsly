@@ -19,7 +19,7 @@ type Props = {
 
 export const ArticleCard = ({ data }: Props) => {
   return (
-    <div className="relative flex flex-wrap justify-between pt-6 mt-4 mb-6 border-t-2 border-borderLine cursor-pointer lg:hover:opacity-60">
+    <div className="flex flex-wrap justify-between pt-6 mt-4 mb-6 border-t-2 border-borderLine cursor-pointer lg:hover:opacity-60">
       <ArticleHeader data={data} />
       <ArticleDescription data={data} />
       <ArticleImage

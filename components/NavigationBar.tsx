@@ -23,9 +23,11 @@ export const NavigationBar = () => {
 
   return (
     <>
-      <header className="fixed top-0 w-full bg-white">
-        <div className="h-14 flex justify-between items-center px-4 relative border-b border-gray-200">
-          <div className="font-bold text-2xl text-teal-900 md:basis-3/12">Knewsly</div>
+      <header className="fixed top-0 w-full bg-white z-50 border-b border-gray-200">
+        <div className="h-14 flex justify-between items-center px-3 relative max-w-7xl md:px-12">
+          <div className="font-bold text-2xl text-teal-900 md:basis-3/12">
+            <Link href="/">Knewsly</Link>
+          </div>
           <div className="flex items-center justify-end gap-x-2 text-gray-800 basis-3/12">
             <div className="hidden md:flex items-center gap-x-4">
               <Link href="/sports">Sports</Link>

@@ -14,6 +14,9 @@ module.exports = {
         darkText: "var(--dark-gray)",
         darkShade: "var(--dark-shade)",
         offWhite: "var(--off-white)"
+      },
+      maxWidth: {
+        container: "73.75rem"
       }
     }
   },
