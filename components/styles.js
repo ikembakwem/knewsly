@@ -8,12 +8,12 @@ export const ArticlesContainer = styled.div({
   position: "relative",
   "@media (min-width: 700px)": {
     maxWidth: "calc(100vw - 380px)",
-    marginLeft: "30px",
+    marginLeft: "30px"
   },
   "@media (min-width: 1100px)": {
     width: "calc(100vw -210px - 360px)",
-    marginLeft: "210px",
-  },
+    marginLeft: "210px"
+  }
 });
 
 export const Content = styled.article({
@@ -30,23 +30,23 @@ export const Content = styled.article({
   paddingTop: "1.425em",
   "@media (min-width: 1100px)": {
     ":hover": {
-      opacity: 0.6,
-    },
-  },
+      opacity: 0.6
+    }
+  }
 });
 
 export const HeaderContainer = styled.header({
   flexBasis: "69%",
   "@media (min-width: 850px)": {
     flexBasis: "28%",
-    minWidth: 0,
-  },
+    minWidth: 0
+  }
 });
 
 export const ArticleHeadFooter = styled.div({
   fontSize: "0.8125rem",
   lineHeight: 1.54,
-  color: "#777",
+  color: "#777"
 });
 
 export const DescriptionContainer = styled.div({
@@ -57,14 +57,14 @@ export const DescriptionContainer = styled.div({
     fontSize: "0.875rem",
     display: "block",
     lineHeight: 1.43,
-    color: "#777",
-  },
+    color: "#777"
+  }
 });
 
 export const FeaturedDescriptionContainer = styled(DescriptionContainer)({
   "@media (min-width: 850px)": {
-    margin: "15px 0 30px",
-  },
+    margin: "15px 0 30px"
+  }
 });
 
 export const NavigationContainer = styled.header({
@@ -80,11 +80,11 @@ export const NavigationContainer = styled.header({
     right: 0,
     left: 0,
     width: "210px",
-    display: "block",
+    display: "block"
   },
   "@media (min-width: 1440px)": {
-    width: "250px",
-  },
+    width: "250px"
+  }
 });
 
 export const ImageContainer = styled.div({
@@ -92,7 +92,7 @@ export const ImageContainer = styled.div({
   cursor: "pointer",
 
   img: {
-    width: "100%",
+    width: "100%"
   },
   "@media (min-width: 850px)": {
     display: "block",
@@ -101,9 +101,9 @@ export const ImageContainer = styled.div({
     maxHeight: "164px",
     img: {
       height: "100%",
-      objectFit: "cover",
-    },
-  },
+      objectFit: "cover"
+    }
+  }
 });
 
 export const FeaturedImageContainer = styled(ImageContainer)({
@@ -112,8 +112,8 @@ export const FeaturedImageContainer = styled(ImageContainer)({
     order: 2,
     flexBasis: "67%",
     maxWidth: "708px",
-    maxHeight: "350px",
-  },
+    maxHeight: "350px"
+  }
 });
 
 // TYPOGRAPHY
@@ -132,8 +132,7 @@ export const CategoryTitle = styled.div`
   margin-bottom: 7px;
   color: #00d301;
   ${({ feat }) =>
-    feat &&
-    `padding-top: 3px; font-size: 1.125rem; font-weight: bold; text-transform: uppercase;`}
+    feat && `padding-top: 3px; font-size: 1.125rem; font-weight: bold; text-transform: uppercase;`}
 `;
 
 export const ArticleTitle = styled.h2({
@@ -146,26 +145,26 @@ export const ArticleTitle = styled.h2({
   letterSpacing: "-0.7px",
   color: "#000",
   "@media (min-width: 850px)": {
-    marginBottom: "10px",
-  },
+    marginBottom: "10px"
+  }
 });
 
 export const FeaturedArticleTitle = styled(ArticleTitle)({
   "@media (min-width: 1100px)": {
-    fontSize: "1.625rem",
-  },
+    fontSize: "1.625rem"
+  }
 });
 
 // UTILS
 export const Author = styled.span({
   fontWeight: 700,
   color: "#333",
-  lineHeight: 1.23,
+  lineHeight: 1.23
 });
 
 export const Time = styled.div({
   display: "flex",
-  gap: "3px",
+  gap: "3px"
 });
 
 // V.2
@@ -204,8 +203,8 @@ export const Button2 = styled.button({
   transition: "all .2s ease",
   ":focus": {
     outline: "none",
-    boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)",
-  },
+    boxShadow: "0 0 0 3px rgba(66, 153, 225, 0.5)"
+  }
 });
 
 export const MenuItem = styled.p({
@@ -217,12 +216,12 @@ export const MenuItem = styled.p({
 
   "@media (min-width: 575px)": {
     marginBottom: "5px",
-    width: "auto",
-  },
+    width: "auto"
+  }
 });
 
 export const NavMenu = styled.div({
   display: "flex",
   flexDirection: "column",
-  marginTop: "20px",
+  marginTop: "20px"
 });

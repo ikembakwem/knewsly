@@ -1,14 +1,12 @@
-import { Time } from "./styles";
-
-export const DateTime = ({ date }) => {
+export const DateTime = ({ date }: { date: Date }) => {
   const dateString = new Date(date);
   const createdTime = dateString.toLocaleTimeString();
   const createdDate = dateString.toDateString();
   return (
-    <Time>
+    <div className="flex gap-1">
       <span>{createdTime}</span>
       <span>•</span>
       <span>{createdDate}</span>
-    </Time>
+    </div>
   );
 };
