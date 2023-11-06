@@ -2,42 +2,29 @@ import { ArticleHeader } from "./ArticleHeader";
 import { ArticleDescription } from "./ArticleDescription";
 import { ArticleImage } from "./ArticleImage";
 
-type ArticleData = {
-  author: string;
+export type ArticleData = {
+  author: string | null;
   title: string;
-  publishedAt: Date;
-  content: string;
-  urlToImage: string;
-  description: string;
+  publishedAt: string;
+  content: string | null;
+  urlToImage: string | null;
+  description: string | null;
   url: string;
-  source?: { name: string };
-  featured?: boolean;
+  source: { name: string } | null;
 };
 
-export const ArticleCard = ({
-  author,
-  title,
-  publishedAt,
-  content,
-  urlToImage,
-  description,
-  url,
-  source,
-  featured = false
-}: ArticleData) => {
+type Props = {
+  data: ArticleData;
+};
+
+export const ArticleCard = ({ data }: Props) => {
   return (
     <div className="relative flex flex-wrap justify-between pt-6 mt-4 mb-6 border-t-2 border-borderLine cursor-pointer lg:hover:opacity-60">
-      <ArticleHeader
-        featured={featured}
-        category="Business"
-        title={title}
-        author={author}
-        publishedAt={publishedAt}
-        url={url}
-        source={source}
+      <ArticleHeader data={data} />
+      <ArticleDescription data={data} />
+      <ArticleImage
+        urlToImage={data.urlToImage ? data.urlToImage : `/images/newsImgPlaceholder.jpg`}
       />
-      <ArticleDescription content={content} description={description} />
-      <ArticleImage urlToImage={urlToImage ? urlToImage : `/images/newsImgPlaceholder.jpg`} />
     </div>
   );
 };

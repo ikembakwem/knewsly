@@ -3,14 +3,12 @@ import fetchPosts from "@utils/fetchPosts";
 import { FeaturedArticleCard } from "@components/FeaturedArticleCard";
 
 export default async function Hone() {
-  const posts = await fetchPosts("Business");
-
-  console.log(posts);
+  const posts = await fetchPosts("technology");
 
   return (
     <>
       <div className="w-11/12 mx-auto relative max-w-7xl px-3">
-        <h2 className="text-lg tracking-tight m-4 text-indigo-700 cursor-pointer">Business News</h2>
+        <h2 className="text-lg tracking-tight m-4 text-indigo-700 cursor-pointer">Tech News</h2>
       </div>
       <div className="w-11/12 mx-auto relative max-w-7xl px-3">
         <FeaturedArticleCard data={posts[0]} />

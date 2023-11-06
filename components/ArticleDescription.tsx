@@ -1,15 +1,20 @@
+import { ArticleData } from "./ArticleCard";
+
 type Props = {
-  content?: string;
-  description?: string;
+  data: ArticleData;
 };
 
-export const ArticleDescription = ({ content, description }: Props) => {
+export const ArticleDescription = ({ data }: Props) => {
   return (
     <div className="hidden cursor-pointer lg:block lg:basis-4/12 lg:text-sm leading-normal text-lightText">
-      {description
-        ? description
-        : content
-        ? `${`content.length > 195 ? ${content.substring(0, 195)}...`}`
+      {typeof data?.description === "string"
+        ? data.description.length > 195
+          ? `${data.description.substring(0, 195)}...`
+          : data.description
+        : typeof data.content === "string"
+        ? data.content.length > 195
+          ? `${data.content.substring(0, 195)}...`
+          : data.content
         : "Click to view full story"}
     </div>
   );

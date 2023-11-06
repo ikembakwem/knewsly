@@ -1,4 +1,4 @@
-export const DateTime = ({ date }: { date: Date }) => {
+export const DateTime = ({ date }: { date: string }) => {
   const dateString = new Date(date);
   const createdTime = dateString.toLocaleTimeString();
   const createdDate = dateString.toDateString();
