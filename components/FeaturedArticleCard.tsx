@@ -9,7 +9,7 @@ type Props = {
 
 export const FeaturedArticleCard = ({ data }: Props) => {
   return (
-    <div className="flex flex-wrap justify-between pt-6 mt-4 mb-6 border-t-2 border-borderLine cursor-pointer lg:hover:opacity-60">
+    <div className="flex flex-wrap justify-between pt-6 mt-4 pr-1 mb-6 border-t-2 border-borderLine cursor-pointer lg:hover:opacity-60">
       <div className="basis-4/12 mb-4 cursor-pointer lg:order-2 lg:block lg:basis-8/12 lg:max-w-3xl lg:max-h-96">
         <img src={data.urlToImage} alt="Cover for post" className="w-full lg:h-full object-cover" />
       </div>

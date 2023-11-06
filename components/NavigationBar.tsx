@@ -21,6 +21,10 @@ export const NavigationBar = () => {
     };
   }, []);
 
+  const closeMenuOnLinkClick = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       <header className="fixed top-0 w-full bg-white z-50 border-b border-gray-200">
@@ -45,7 +49,7 @@ export const NavigationBar = () => {
           </div>
         </div>
 
-        {isOpen ? <MobileNavMenu /> : null}
+        {isOpen ? <MobileNavMenu onLinkClick={closeMenuOnLinkClick} /> : null}
       </header>
       <div className="h-14"></div>
     </>
