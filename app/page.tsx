@@ -5,8 +5,6 @@ import { FeaturedArticleCard } from "@components/FeaturedArticleCard";
 export default async function Hone() {
   const posts = await fetchPosts("Business");
 
-  console.log(posts);
-
   return (
     <>
       <div className="w-11/12 mx-auto relative max-w-7xl px-3">

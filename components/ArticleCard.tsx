@@ -7,7 +7,7 @@ export type ArticleData = {
   title: string;
   publishedAt: string;
   content: string | null;
-  urlToImage: string | null;
+  urlToImage?: string;
   description: string | null;
   url: string;
   source: { name: string } | null;

@@ -24,11 +24,11 @@ export const FeaturedArticleCard = ({ data }: Props) => {
           </Link>
         </h2>
         <div className="hidden cursor-pointer lg:block lg:basis-4/12 lg:mx-0 lg:mt-4 lg:mb-8 lg:text-sm leading-normal text-lightText">
-          {data.description !== undefined
+          {typeof data?.description === "string"
             ? data.description.length > 128
               ? `${data.description.substring(0, 128)}...`
               : data.description
-            : data.content !== undefined
+            : typeof data.content === "string"
             ? data.content.length > 128
               ? `${data.content.substring(0, 128)}...`
               : data.content
